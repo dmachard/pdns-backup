@@ -154,33 +154,37 @@ def export_metrics(cfg: dict, zones: dict, status: bool):
     metric_status = prometheus_client.Gauge(
                             'pdnsbackup_status', 
                             'status of the backup', 
-                            ['date', 'error'], 
+                            ['date', 'database', 'error'], 
                         registry=registry)
     metric_zones = prometheus_client.Gauge(
                             'pdnsbackup_zones_total', 
-                            'total number of zones', 
+                            'total number of zones',
+                            ['database'],
                             registry=registry)
     metric_zones_empty = prometheus_client.Gauge(
                             'pdnsbackup_zones_empty_total', 
-                            'total number of empty zones', 
+                            'total number of empty zones',
+                            ['database'],
                             registry=registry)
     metrics_records = prometheus_client.Gauge(
                             'pdnsbackup_records_total', 
                             'total number of records per zone',
-                            ['zone'],
+                            ['zone', 'database'],
                             registry=registry)
     metrics_wildcards = prometheus_client.Gauge(
                             'pdnsbackup_wildcards_total', 
                             'total number of wildcards',
+                            ['database'],
                             registry=registry)
     metrics_delegations = prometheus_client.Gauge(
                             'pdnsbackup_delegations_total', 
                             'total number of delegations',
+                            ['database'],
                             registry=registry)
     metrics_rrtypes = prometheus_client.Gauge(
                             'pdnsbackup_rrtypes_total', 
                             'total number of records per rrtypes', 
-                            ['rrtype'],
+                            ['rrtype', 'database'],
                             registry=registry)
     try:
         logger.debug("write metrics to file (%s)" % cfg["metrics-prom-file"])
@@ -188,16 +192,16 @@ def export_metrics(cfg: dict, zones: dict, status: bool):
         # update metrics
         for name, zone in zones.items():
             # number of empty zones
-            if zone["stats"]["records"] == 0: metric_zones_empty.inc(1)
-            metrics_wildcards.inc(zone["stats"]["wilcards"])
-            metrics_delegations.inc(zone["stats"]["delegations"])
-            metric_zones.inc(1)
-            metrics_records.labels(zone="").inc(zone["stats"]["records"])
-            metrics_records.labels(zone=name).set(zone["stats"]["records"])
+            if zone["stats"]["records"] == 0: metric_zones_empty.labels(database=cfg["gmysql-dbname"]).inc(1)
+            metrics_wildcards.labels(database=cfg["gmysql-dbname"]).inc(zone["stats"]["wilcards"])
+            metrics_delegations.labels(database=cfg["gmysql-dbname"]).inc(zone["stats"]["delegations"])
+            metric_zones.labels(database=cfg["gmysql-dbname"]).inc(1)
+            metrics_records.labels(zone=cfg["gmysql-dbname"], database="").inc(zone["stats"]["records"])
+            metrics_records.labels(zone=name, database=cfg["gmysql-dbname"]).set(zone["stats"]["records"])
             for k,v in zone["stats"]["rrtypes"].items():
-                metrics_rrtypes.labels(rrtype=k.upper()).inc(v)
+                metrics_rrtypes.labels(rrtype=k.upper(), database=cfg["gmysql-dbname"]).inc(v)
 
-        metric_status.labels(date=datetime.now().strftime('%Y-%m-%d %H:%M:%S'), error= int(not status)).set(1.0)
+        metric_status.labels(date=datetime.now().strftime('%Y-%m-%d %H:%M:%S'), database=cfg["gmysql-dbname"], error= int(not status)).set(1.0)
 
         prometheus_client.write_to_textfile(cfg["metrics-prom-file"], registry)
         logger.info("export metrics - success")
