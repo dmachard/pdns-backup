@@ -1,34 +1,34 @@
 # HELP pdnsbackup_status status of the backup
 # TYPE pdnsbackup_status gauge
-pdnsbackup_status{date="2023-10-08 14:25:12",error="0"} 1.0
+pdnsbackup_status{date="2023-10-08 14:25:12",database="pdns",error="0"} 1.0
 # HELP pdnsbackup_zones_total total number of zones
 # TYPE pdnsbackup_zones_total gauge
-pdnsbackup_zones_total 5.0
+pdnsbackup_zones_total{database="pdns"} 5.0
 # HELP pdnsbackup_zones_empty_total total number of empty zones
 # TYPE pdnsbackup_zones_empty_total gauge
-pdnsbackup_zones_empty_total 0.0
+pdnsbackup_zones_empty_total{database="pdns"} 0.0
 # HELP pdnsbackup_records_total total number of records per zone
 # TYPE pdnsbackup_records_total gauge
-pdnsbackup_records_total{zone=""} 28.0
-pdnsbackup_records_total{zone="0.10.in-addr.arpa"} 3.0
-pdnsbackup_records_total{zone="example.com"} 17.0
-pdnsbackup_records_total{zone="home.lab"} 4.0
-pdnsbackup_records_total{zone="infra.lab"} 3.0
-pdnsbackup_records_total{zone="lab"} 1.0
+pdnsbackup_records_total{zone="",database="pdns"} 28.0
+pdnsbackup_records_total{zone="0.10.in-addr.arpa",database="pdns"} 3.0
+pdnsbackup_records_total{zone="example.com",database="pdns"} 17.0
+pdnsbackup_records_total{zone="home.lab",database="pdns"} 4.0
+pdnsbackup_records_total{zone="infra.lab",database="pdns"} 3.0
+pdnsbackup_records_total{zone="lab",database="pdns"} 1.0
 # HELP pdnsbackup_wildcards_total total number of wildcards
 # TYPE pdnsbackup_wildcards_total gauge
-pdnsbackup_wildcards_total 2.0
+pdnsbackup_wildcards_total{database="pdns"} 2.0
 # HELP pdnsbackup_delegations_total total number of delegations
 # TYPE pdnsbackup_delegations_total gauge
-pdnsbackup_delegations_total 0.0
+pdnsbackup_delegations_total{database="pdns"} 0.0
 # HELP pdnsbackup_rrtypes_total total number of records per rrtypes
 # TYPE pdnsbackup_rrtypes_total gauge
-pdnsbackup_rrtypes_total{rrtype="A"} 13.0
-pdnsbackup_rrtypes_total{rrtype="AAAA"} 2.0
-pdnsbackup_rrtypes_total{rrtype="TXT"} 3.0
-pdnsbackup_rrtypes_total{rrtype="PTR"} 4.0
-pdnsbackup_rrtypes_total{rrtype="CNAME"} 3.0
-pdnsbackup_rrtypes_total{rrtype="SRV"} 1.0
-pdnsbackup_rrtypes_total{rrtype="MX"} 1.0
-pdnsbackup_rrtypes_total{rrtype="NS"} 7.0
-pdnsbackup_rrtypes_total{rrtype="OTHERS"} 6.0
+pdnsbackup_rrtypes_total{rrtype="A",database="pdns"} 13.0
+pdnsbackup_rrtypes_total{rrtype="AAAA",database="pdns"} 2.0
+pdnsbackup_rrtypes_total{rrtype="TXT",database="pdns"} 3.0
+pdnsbackup_rrtypes_total{rrtype="PTR",database="pdns"} 4.0
+pdnsbackup_rrtypes_total{rrtype="CNAME",database="pdns"} 3.0
+pdnsbackup_rrtypes_total{rrtype="SRV",database="pdns"} 1.0
+pdnsbackup_rrtypes_total{rrtype="MX",database="pdns"} 1.0
+pdnsbackup_rrtypes_total{rrtype="NS",database="pdns"} 7.0
+pdnsbackup_rrtypes_total{rrtype="OTHERS",database="pdns"} 6.0
