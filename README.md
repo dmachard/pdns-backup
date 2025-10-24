@@ -6,7 +6,7 @@ Backup tool for PowerDNS database (MySQL) to local or S3 storage in bind format.
 
 ## PyPI
 
-![python 3.13.x](https://img.shields.io/badge/python%203.13.x-tested-blue) ![python 3.12.x](https://img.shields.io/badge/python%203.12.x-tested-blue) ![python 3.11.x](https://img.shields.io/badge/python%203.11.x-tested-blue)
+![python 3.14.x](https://img.shields.io/badge/python%203.14.x-tested-blue) ![python 3.13.x](https://img.shields.io/badge/python%203.13.x-tested-blue) ![python 3.12.x](https://img.shields.io/badge/python%203.12.x-tested-blue) ![python 3.11.x](https://img.shields.io/badge/python%203.11.x-tested-blue)
 
 Deploy the `pdnsbackup` tool in your server with the pip command.
 
