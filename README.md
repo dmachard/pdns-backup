@@ -109,7 +109,7 @@ sudo docker build . --file Dockerfile -t pdnsbackup
 
 ## Run tests
 
-![powerdns auth 4.9.x](https://img.shields.io/badge/pdns%204.9.x-tested-green) ![powerdns auth 4.8.x](https://img.shields.io/badge/pdns%204.8.x-tested-green)
+![powerdns auth 5.0.x](https://img.shields.io/badge/pdns%205.0.x-tested-green) ![powerdns auth 4.9.x](https://img.shields.io/badge/pdns%204.9.x-tested-green) ![powerdns auth 4.8.x](https://img.shields.io/badge/pdns%204.8.x-tested-green)
 
 Run all tests
 
