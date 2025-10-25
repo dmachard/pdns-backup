@@ -43,7 +43,8 @@ jobs:
           branch: "auth-4.8.x"
         - pdns-version: "49"
           branch: "auth-4.9.x"
-      
+        - pdns-version: "50"
+          branch: "auth-5.0.x"
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
