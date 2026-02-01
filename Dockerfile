@@ -1,4 +1,4 @@
-FROM python:3.23-alpine
+FROM python:3.14-alpine
 
 LABEL name="Backup tool for PowerDNS database " \
       description="Backup tool for PowerDNS database " \
