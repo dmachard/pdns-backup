@@ -2,4 +2,4 @@ aiomysql==0.3.2
 python-dotenv==1.2.2
 pyyaml==6.0.3
 boto3==1.42.80
-prometheus-client==0.24.1
+prometheus-client==0.25.0
