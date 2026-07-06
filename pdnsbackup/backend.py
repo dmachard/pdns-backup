@@ -3,10 +3,10 @@ import aiomysql
 import asyncio
 
 logger = logging.getLogger("pdnsbackup")
-loop = asyncio.get_event_loop()
 
 async def fetch(cfg: dict):
     records = []
+    loop = asyncio.get_running_loop()
 
     if cfg["gmysql-enabled"]:
         logger.info("gmysql - backend enabled...")

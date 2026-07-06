@@ -14,7 +14,6 @@ from pdnsbackup import backend
 from pdnsbackup import parser
 from pdnsbackup import export
 
-loop = asyncio.get_event_loop()
 logger = logging.getLogger("pdnsbackup")
 
 def setup_cli():
