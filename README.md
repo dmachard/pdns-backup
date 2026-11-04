@@ -6,7 +6,7 @@ Backup tool for PowerDNS database (MySQL) to local or S3 storage in bind format.
 
 ## PyPI
 
-![python 3.14.x](https://img.shields.io/badge/python%203.14.x-tested-blue) ![python 3.13.x](https://img.shields.io/badge/python%203.13.x-tested-blue) ![python 3.12.x](https://img.shields.io/badge/python%203.12.x-tested-blue) ![python 3.11.x](https://img.shields.io/badge/python%203.11.x-tested-blue)
+![python 3.15.x](https://img.shields.io/badge/python%203.15.x-tested-blue) ![python 3.14.x](https://img.shields.io/badge/python%203.14.x-tested-blue) ![python 3.13.x](https://img.shields.io/badge/python%203.13.x-tested-blue) ![python 3.12.x](https://img.shields.io/badge/python%203.12.x-tested-blue) ![python 3.11.x](https://img.shields.io/badge/python%203.11.x-tested-blue)
 
 Deploy the `pdnsbackup` tool in your server with the pip command.
 
@@ -109,7 +109,7 @@ sudo docker build . --file Dockerfile -t pdnsbackup
 
 ## Run tests
 
-![powerdns auth 5.0.x](https://img.shields.io/badge/pdns%205.0.x-tested-green) ![powerdns auth 4.9.x](https://img.shields.io/badge/pdns%204.9.x-tested-green) ![powerdns auth 4.8.x](https://img.shields.io/badge/pdns%204.8.x-tested-green)
+![powerdns auth 5.1.x](https://img.shields.io/badge/pdns%205.1.x-tested-green) ![powerdns auth 5.0.x](https://img.shields.io/badge/pdns%205.0.x-tested-green) ![powerdns auth 4.9.x](https://img.shields.io/badge/pdns%204.9.x-tested-green) ![powerdns auth 4.8.x](https://img.shields.io/badge/pdns%204.8.x-tested-green)
 
 Run all tests
 
