@@ -10,11 +10,11 @@ on:
       
 jobs:
   unittests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
 
     strategy:
       matrix:
-        python: [ "3.11", "3.12", "3.13", "3.14" ]
+        python: [ "3.14", "3.15" ]
 
     steps:
     - uses: actions/checkout@v7
@@ -32,12 +32,11 @@ jobs:
         sudo python -m unittest -v tests.test_export_metrics
 
   integration:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
 
     strategy:
       matrix:
-        pdns-version: [ "48", "49" ]
-        python: [ '3.11', '3.12' ]
+        python: [ '3.14', '3.15' ]
         include:
         - pdns-version: "48"
           branch: "auth-4.8.x"
@@ -45,6 +44,8 @@ jobs:
           branch: "auth-4.9.x"
         - pdns-version: "50"
           branch: "auth-5.0.x"
+        - pdns-version: "51"
+          branch: "auth-5.1.x"
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
